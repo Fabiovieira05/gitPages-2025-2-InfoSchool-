@@ -1,0 +1,171 @@
+/* src/app/globals.css */
+/* FORÇAR CARREGAMENTO DAS FONTES ANTES DE TUDO */
+@font-face {
+  font-family: 'Harys World';
+  src: url('/fonts/Harys-World.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* PRÉ-CARREGAR FONTES EXTERNAS */
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Sansita&display=block');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=block');
+
+@import "tailwindcss";
+
+/* Variáveis CSS para os temas */
+:root {
+  /* Tema Claro */
+  --background: #FFFFFF;
+  --card: #F5F5F5;
+  --card-alt: #F8F9FA;
+  --text: #000000;
+  --header: #F8F9FA;
+  --primary: #2C80FF;
+  --border: #E5E5E5;
+  --gray-text: #000000;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --scrollbar-track: #f1f1f1;
+  --scrollbar-thumb: #c1c1c1;
+  --scrollbar-thumb-hover: #a8a8a8;
+}
+
+[data-theme="dark"] {
+  /* Tema Escuro */
+  --background: #2D2D2D;
+  --card: #3A3A3A;
+  --card-alt: #323232;
+  --text: #FFFFFF;
+  --header: #2D2D2D;
+  --primary: #2C80FF;
+  --border: #444444;
+  --gray-text: #FFFFFF;
+  --shadow: rgba(0, 0, 0, 0.6);
+  --scrollbar-track: #2D2D2D;
+  --scrollbar-thumb: #4A4A4A;
+  --scrollbar-thumb-hover: #5A5A5A;
+}
+
+/* Estilos globais básicos */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* CONTAINER RESPONSIVO PROFISSIONAL - APENAS ISSO FOI ADICIONADO */
+.container-responsive {
+  width: 100%;
+  max-width: 95vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    max-width: 90vw;
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-responsive {
+    max-width: 85vw;
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    max-width: 80vw;
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-responsive {
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-responsive {
+    max-width: 1400px;
+    padding: 0 2rem;
+  }
+}
+
+/* Classes utilitárias para usar as variáveis */
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-card {
+  background-color: var(--card);
+}
+
+.bg-card-alt {
+  background-color: var(--card-alt);
+}
+
+.bg-header {
+  background-color: var(--header);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.border-theme {
+  border-color: var(--border);
+}
+
+.text-text {
+  color: var(--text);
+}
+
+.text-gray-theme {
+  color: var(--gray-text);
+}
+
+.shadow-theme {
+  box-shadow: 20px 20px 50px var(--shadow);
+}
+
+.shadow-theme-large {
+  box-shadow: 30px 30px 70px var(--shadow);
+}
+
+/* Estilos da barra de rolagem para toda a página e elementos internos */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
